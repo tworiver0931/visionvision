@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<div class="title">
-			Hello, goorm!
-		</div>
-	</body>
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+	<script>
+		$.ajax({
+				method: "POST",
+				url: "https://kapi.kakao.com/v1/vision/face/detect",
+				data: {
+					image_url: "https://t1.daumcdn.net/alvolo/_vision/openapi/r2/images/01.jpg"
+				},
+				headers: {
+					Authorization: "KakaoAK ac0bc007e6c423e89d9abe5307fb1124"
+				}
+			})
+			.done(function(msg) {
+				console.log(msg)
+			});
+	</script>
+</body>
+
 </html>
